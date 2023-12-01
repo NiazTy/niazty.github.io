@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: Karla;
+	src: url(./fonts/Karla.ttf);
+}
+
+@font-face {
+	font-family: Rubik;
+	src: url(./fonts/Rubik.ttf);
+}
+
+@font-face {
+	font-family: Spectral;
+	src: url(./fonts/Spectral.ttf);
+}
+
+.link-hovered {
+	display: inline-block;
+	position: relative;
+}
+
+.link-hovered::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #787A91;
+	border-radius: 2px;
+	scale: 0;
+	transform-origin: center;
+	transition: scale 0.25s;
+}
+
+.link-hovered:hover::before {
+	scale: 1;
+}
+
+.object-custom {
+	object-position: 0px 30%;
+}

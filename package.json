@@ -1,0 +1,27 @@
+{
+  "name": "niaz",
+  "version": "1.0.0",
+  "description": "niaz website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/public/css/base.css -o ./dist/output.css --watch",
+    "final": "npx tailwindcss -o src/public/css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiazTy/niaz.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "NiazTy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NiazTy/niaz/issues"
+  },
+  "homepage": "https://github.com/NiazTy/niaz#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
