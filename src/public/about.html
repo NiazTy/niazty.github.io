@@ -6,8 +6,8 @@
 	<title>Sebuah tempat catatan - niaz</title>
 
 	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- <link rel="stylesheet" href="../../dist/output.css"> -->
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<link rel="stylesheet" href="../../dist/output.css">
 
 	<script src="js/jquery.js"></script>
 	<script src="https://kit.fontawesome.com/0811bd2339.js" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 </head>
 <body class="bg-white-snow">
 	<header id="menu">
-		<nav class="relative p-2">
+		<nav class="relative border-b border-black p-4">
 			<div class="flex justify-center">
 				<div id="nav-list" class="space-x-8">
 					<a href="/" class="font-rubik text-sm link-hovered font-semibold text-slate-gray">HOME</a>
@@ -26,22 +26,31 @@
 			</div>
 		</nav>
 	</header>
-	<main>
-		<div class="mx-8">
-			<div class="flex flex-row-reverse h-full">
-				<div>
-					<span>
-						<picture>
-							<img src="images/background-main.png" alt="TIona">
-						</picture>
+	<main class="mt-16 mx-8">
+		<div class="flex flex-row space-x-8">
+			<div class="inline basis-1/2 space-y-5">
+				<p class="font-spectral text-lg">Dalam setiap perjalanan terdapat rintangan yang menghalangi kita untuk mencapai suatu tujuan. Maka dari itu tetaplah berusaha, dan nikmati setiap perjalanan yang dilalui.</p>
+				<h1 class="font-spectral text-lg">Saya Muhammad Zakky Pusponegoro, seorang pelajar yang hanya dapat melakukan hal-hal basic yang mungkin tidak berguna. </h1>
+				<p id="introduction" class="font-karla text-md">Saya seorang yang suka melakukan apapun asalkan hal tersebut menyenangkan bagiku, entah hal tersebut aneh sekalipun akan tetap kulakukan! Kalo kalian bertanya-tanya apa saja yang dapat kulakukan? sebenarnya tidak begitu banyak, karena nyatanya aku hanyalah seorang pelajar yang tidak tahu harus melakukan apa di dunia digital ini.</p>
+					<span class="flex flex-wrap gap-3">
+						<span>
+							<p class="font-bold text-xs">Skills</p>
+							<p class="text-sm">Photography, Front-end dev, Editing</p>
+						</span>
+						<span>
+							<p class="font-bold text-xs">Hobbies</p>
+							<p class="text-sm">Playing some video games, Reading</p>
+						</span>
+						<span>
+							<p class="font-bold text-xs">Experience</p>
+							<a href="project.html" class="text-sm">You can check here!</a>
+						</span>
 					</span>
-				</div>
-				<div class="absolute flex flex-col items-center gap-1 mx-6 top-1/2 right-[47.33%]">
-					<h1 class="font-spectral text-sm">HALO, SELAMAT DATANG DI PERAMBAN WEB MILIK <br>
-						<span class="font-karla text-4xl">MUHAMMAD ZAKKY PUSPONEGORO!</span>
-					</h1>
-					<p class="font-spectral text-md text-justify">Sebelum kalian berkenalan denganku mari berkenalan terlebih dahulu dengan karakater yang kalian temui dihalaman awal. By the way namanya adalah TIona!</p>
-				</div>
+			</div>
+			<div class="inline basis-1/2">
+				<picture class="">
+					<img class="aspect-[9/8] grayscale object-cover" src="images/background-about.JPG" alt="">
+				</picture>
 			</div>
 		</div>
 	</main>

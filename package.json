@@ -4,7 +4,6 @@
   "description": "niaz website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./src/public/css/base.css -o ./dist/output.css --watch",
     "final": "npx tailwindcss -o src/public/css/style.css --minify"
   },
