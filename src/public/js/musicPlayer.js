@@ -6,7 +6,9 @@ let listMusic = [
 		{"title": "More Than Friends", "artist": "24KGoldn", src: "music/more-than-friends.mp3"}
 	]
 
-audio.src = listMusic[1].src
+randomMusic = Math.floor(Math.random() * listMusic.length)
+
+audio.src = listMusic[randomMusic].src
 audio.volume = 0.5
 
 const playButton = $("#play-button")
@@ -24,8 +26,8 @@ playButton.on("click", () => {
 const title = $("#song-title")
 const artist = $("#song-artist")
 
-title.text(`${listMusic[1].title}`)
-artist.text(`${listMusic[1].artist}`)
+title.text(`${listMusic[randomMusic].title}`)
+artist.text(`${listMusic[randomMusic].artist}`)
 
 
 const currentTime = $("#current-time")
