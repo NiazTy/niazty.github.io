@@ -1,0 +1,26 @@
+{
+  "name": "niaz",
+  "version": "0.1.2",
+  "description": "portfolio web",
+  "main": "index.js",
+  "scripts": {
+    "development": "npx tailwindcss -i ./src/css/base.css -o ./dist/css/output.css --watch",
+    "final": "npx tailwindcss -o src/css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiazTy/niazty.github.io.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "NiazTy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiazTy/niazty.github.io/issues"
+  },
+  "homepage": "https://github.com/NiazTy/niazty.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}

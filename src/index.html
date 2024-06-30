@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - niaz.my.id</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Alpinejs -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwindcss -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- <link rel="stylesheet" href="../dist/css/output.css"> -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="px-4 lg:px-16 py-9">
+        <div x-data="{ open: false }" class="container mx-auto">
+            <div class="z-10 flex items-center justify-between">
+                <div class="font-bold font-ibm-plex-sans text-paragraph">
+                    <a href="/">PLACE FOR NIAZ</a> <br>
+                    <p class="font-semibold">HIGH SCHOOL STUDENT</p>
+                </div>
+                <div class="hidden md:block">
+                    <a href="gallery" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                        <span>Gallery</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                        <span>Works</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                        <span>About Me</span>
+                    </a>
+                </div>
+                <button @click="open = !open" class="w-10 h-10 rounded-md bg-paragraph md:hidden">
+                    <img src="./public/asset/hamburger.svg" alt="hamburger-menu">
+                </button>
+            </div>
+            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-xl">
+                <div class="flex flex-col space-y-4">
+                    <a href="gallery" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="images-outline"></ion-icon>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>Works</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <span>About Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="z-10 px-4 pt-9">
+        <div class="container mx-auto">
+            <div class="justify-center block space-y-4 md:flex md:gap-12 md:items-center md:space-y-0">
+                <div class="px-8 py-4">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-xl text-paragraph font-ibm-plex-sans">Be The One with World!</p>
+                        <div class="py-4 border-b-2">
+                            <p class="text-2xl lg:text-3xl text-paragraph font-libre-baskerville">Hello, I'm</p>
+                            <h1 class="text-2xl lg:text-3xl text-paragraph font-libre-baskerville">Muhammad Zakky Pusponegoro</h1>
+                        </div>
+                        <div class="space-x-4 text-paragraph">
+                            <a href="" class="lg:text-xl">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                            <a href="" class="lg:text-xl">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <img src="./public/asset/ezgif-6-709821b3dc.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="relative h-[75px] lg:h-[120px] bg-paragraph wave"></div>
+            <div class="container m-auto">
+                <div class="lg:px-48">
+                    <div class="flex flex-col w-full px-4 py-32 md:pt-48">
+                        <h2 class="py-6 text-2xl font-bold text-center lg:text-3xl text-paragraph font-libre-baskerville">&lt;Music&#47;&gt;</h2>
+                        <p class="text-lg text-center lg:text-xl text-paragraph font-libre-baskerville">
+                            Now Playing <span id="song-title" class="text-[#DF0403]"></span>
+                        </p>
+                        <div class="flex items-center justify-between mx-6 space-x-4">
+                            <p id="current-time">00.00</p>
+                            <div id="progress-bar-container" class="relative w-full h-1.5 bg-paragraph rounded-full">
+                            <div id="progress-bar" class="absolute top-0 left-0 w-0 h-full rounded-full bg-white-snow"></div>
+                            </div>
+                            <p id="duration">00.00</p>
+                        </div>
+                        <button class="flex items-center gap-6 mx-auto mt-5">
+                            <div>
+                                <ion-icon id="backward-button" name="play-skip-back" class="text-[#6D4E52] text-3xl"></ion-icon>
+                            </div>
+                            <div id="play-and-stop-button" class="text-[#6D4E52] text-3xl">
+                                <ion-icon id="play-button" name="play" class=""></ion-icon>
+                                <ion-icon id="pause-button" name="pause" class="hidden"></ion-icon>
+                            </div>
+                            <div>
+                                <ion-icon id="foward-button" name="play-skip-forward" class="text-[#6D4E52] text-3xl"></ion-icon>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer class="px-4 md:px-16 pb-9">
+        <div>
+            <div class="flex justify-between">
+                <div class="flex flex-col">
+                    <div class="space-x-4 text-paragraph">
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </a>
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">
+                            © 2024 <a href="/">Niaz</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="space-x-1 md:space-x-6">
+                        <a href="#home" class="border-b border-[#787A91] font-ibm-plex-sans text-xs md:text-sm font-semibold text-paragraph">Home</a> <br class="hidden">
+                        <a href="gallery" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Gallery</a> <br class="hidden">
+                        <a href="works" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Works</a> <br class="hidden">
+                        <a href="about-me" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">About Me</a> <br class="hidden">
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold text-right font-ibm-plex-sans md:text-sm text-paragraph">
+                            Last update at 29/06/2024
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/musicPlayer.js"></script>
+</body>
+</html>
