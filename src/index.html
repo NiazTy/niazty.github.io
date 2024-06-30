@@ -13,15 +13,15 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
 
     <!-- Tailwindcss -->
     <link rel="stylesheet" href="css/base.css">
-    <!-- <link rel="stylesheet" href="../dist/css/output.css"> -->
+    <link rel="stylesheet" href="../dist/css/output.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="px-4 lg:px-16 py-9">
+    <nav class="fixed w-full z-[1000] px-4 overflow-hidden bg-white lg:px-16 py-9">
         <div x-data="{ open: false }" class="container mx-auto">
             <div class="z-10 flex items-center justify-between">
                 <div class="font-bold font-ibm-plex-sans text-paragraph">
@@ -32,10 +32,10 @@
                     <a href="gallery" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
                         <span>Gallery</span>
                     </a>
-                    <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                    <a href="works" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
                         <span>Works</span>
                     </a>
-                    <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                    <a href="about-me" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
                         <span>About Me</span>
                     </a>
                 </div>
@@ -43,17 +43,17 @@
                     <img src="./public/asset/hamburger.svg" alt="hamburger-menu">
                 </button>
             </div>
-            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-xl">
+            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-2xl">
                 <div class="flex flex-col space-y-4">
                     <a href="gallery" class="ml-4 space-x-4 text-lg text-paragraph">
                         <ion-icon name="images-outline"></ion-icon>
                         <span>Gallery</span>
                     </a>
-                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                    <a href="works" class="ml-4 space-x-4 text-lg text-paragraph">
                         <ion-icon name="book-outline"></ion-icon>
                         <span>Works</span>
                     </a>
-                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                    <a href="about-me" class="ml-4 space-x-4 text-lg text-paragraph">
                         <ion-icon name="person-outline"></ion-icon>
                         <span>About Me</span>
                     </a>
@@ -61,7 +61,7 @@
             </div>
         </div>
     </nav>
-    <section id="home" class="z-10 px-4 pt-9">
+    <section id="home" class="z-10 px-4 pt-36">
         <div class="container mx-auto">
             <div class="justify-center block space-y-4 md:flex md:gap-12 md:items-center md:space-y-0">
                 <div class="px-8 py-4">
@@ -71,11 +71,11 @@
                             <p class="text-2xl lg:text-3xl text-paragraph font-libre-baskerville">Hello, I'm</p>
                             <h1 class="text-2xl lg:text-3xl text-paragraph font-libre-baskerville">Muhammad Zakky Pusponegoro</h1>
                         </div>
-                        <div class="space-x-4 text-paragraph">
-                            <a href="" class="lg:text-xl">
+                        <div class="space-x-4 opacity-50 text-paragraph">
+                            <a href="https://instagram.com/m.niazyk" class="lg:text-xl">
                             <ion-icon name="logo-instagram"></ion-icon>
                             </a>
-                            <a href="" class="lg:text-xl">
+                            <a href="https://github.com/NiazTy" class="lg:text-xl">
                                 <ion-icon name="logo-github"></ion-icon>
                             </a>
                         </div>
@@ -87,75 +87,91 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="relative h-[75px] lg:h-[120px] bg-paragraph wave"></div>
-            <div class="container m-auto">
-                <div class="lg:px-48">
-                    <div class="flex flex-col w-full px-4 py-32 md:pt-48">
-                        <h2 class="py-6 text-2xl font-bold text-center lg:text-3xl text-paragraph font-libre-baskerville">&lt;Music&#47;&gt;</h2>
-                        <p class="text-lg text-center lg:text-xl text-paragraph font-libre-baskerville">
-                            Now Playing <span id="song-title" class="text-[#DF0403]"></span>
-                        </p>
-                        <div class="flex items-center justify-between mx-6 space-x-4">
-                            <p id="current-time">00.00</p>
-                            <div id="progress-bar-container" class="relative w-full h-1.5 bg-paragraph rounded-full">
-                            <div id="progress-bar" class="absolute top-0 left-0 w-0 h-full rounded-full bg-white-snow"></div>
+    <section class="w-full h-screen">
+        <div class="bg-[#9aa3bf] h-1/5 flex lg:flex-row flex-col gap-12 md:gap-0 lg:gap-8 justify-around items-center px-12 lg:px-24">
+            <h2 class="font-bold -translate-x-16 translate-y-5 md:-translate-x-60 md:-translate-y-9 lg:-translate-x-0 lg:translate-y-16 lg:text-6xl font-ibm-plex-sans text-background" style="text-shadow: -3px -3px 0 #98A1C4, 3px -3px 0 #98A1C4, -3px 3px 0 #98A1C4, 3px 3px 0 #98A1C4, -3px 0 0 #98A1C4, 3px 0 0 #98A1C4, 0 -3px 0 #98A1C4, 0 3px 0 #98A1C4, -3px -1.5px 0 #98A1C4, 3px -1.5px 0 #98A1C4, -3px 1.5px 0 #98A1C4, 3px 1.5px 0 #98A1C4, -1.5px -3px 0 #98A1C4, 1.5px -3px 0 #98A1C4, -1.5px 3px 0 #98A1C4, 1.5px 3px 0 #98A1C4, -1.5px -1.5px 0 #98A1C4, 1.5px -1.5px 0 #98A1C4, -1.5px 1.5px 0 #98A1C4, 1.5px 1.5px 0 #98A1C4; letter-spacing: 8px;">
+                <span style="font-size: 10rem;">M</span><span class="font-bold lg:text-6xl text-paragraph font-libre-baskerville" style="text-shadow: none;">USIC</span>
+            </h2>
+            <p class="opacity-85 text-md font-libre-baskerville text-paragraph lg:text-background">"Setiap kali merasa stres, saya mengambil waktu untuk duduk diam sambil mendengarkan musik yang membuat hati dan pikiran menjadi sedikit lebih rileks."</p>
+        </div>
+        <div class="px-0 lg:px-48 lg:py-0 md:px-24 md:pt-16 pt-96">
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-12">
+                    <div class="items-start md:inline-flex sm:items-center">
+                        <div class="flex flex-col px-4 md:pt-48">
+                            <div class="flex flex-col items-center justify-between gap-4 md:items-stretch md:flex-row lg:gap-8">
+                                <div class="w-36 h-36">
+                                    <img src="https://lineimg.omusic.com.tw/img/album/7338991.jpg" alt="">
+                                </div>
+                                <div class="flex flex-col flex-wrap justify-normal md:justify-evenly">
+                                    <div>
+                                        <p class="text-lg font-semibold text-center md:text-left lg:text-2xl text-paragraph font-ibm-plex-sans">Now Playing <span id="song-title" text-[#DF0403]></span></p>
+                                        <p class="text-center md:text-left text-md text-paragraph font-ibm-plex-sans">By Togenashi Togeari</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p id="duration">00.00</p>
                         </div>
-                        <button class="flex items-center gap-6 mx-auto mt-5">
-                            <div>
-                                <ion-icon id="backward-button" name="play-skip-back" class="text-[#6D4E52] text-3xl"></ion-icon>
-                            </div>
-                            <div id="play-and-stop-button" class="text-[#6D4E52] text-3xl">
-                                <ion-icon id="play-button" name="play" class=""></ion-icon>
-                                <ion-icon id="pause-button" name="pause" class="hidden"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon id="foward-button" name="play-skip-forward" class="text-[#6D4E52] text-3xl"></ion-icon>
-                            </div>
-                        </button>
+                    </div>
+                    <div class="flex items-center justify-between mx-6 space-x-4">
+                        <p id="current-time">00.00</p>
+                        <div id="progress-bar-container" class="relative w-full h-1.5 bg-paragraph rounded-full">
+                        <div id="progress-bar" class="absolute top-0 left-0 w-0 h-full rounded-full bg-white-snow"></div>
+                        </div>
+                        <p id="duration">00.00</p>
                     </div>
                 </div>
-            </div>
-    </section>
-    <footer class="px-4 md:px-16 pb-9">
-        <div>
-            <div class="flex justify-between">
-                <div class="flex flex-col">
-                    <div class="space-x-4 text-paragraph">
-                        <a href="" class="lg:text-xl">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </a>
-                        <a href="" class="lg:text-xl">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                        <a href="" class="lg:text-xl">
-                            <ion-icon name="logo-github"></ion-icon>
-                        </a>
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">
-                            © 2024 <a href="/">Niaz</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="flex flex-col">
-                    <div class="space-x-1 md:space-x-6">
-                        <a href="#home" class="border-b border-[#787A91] font-ibm-plex-sans text-xs md:text-sm font-semibold text-paragraph">Home</a> <br class="hidden">
-                        <a href="gallery" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Gallery</a> <br class="hidden">
-                        <a href="works" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Works</a> <br class="hidden">
-                        <a href="about-me" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">About Me</a> <br class="hidden">
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold text-right font-ibm-plex-sans md:text-sm text-paragraph">
-                            Last update at 29/06/2024
-                        </p>
-                    </div>
+                <div class="mx-auto">
+                    <button class="flex items-center gap-6 mt-5">
+                        <div>
+                            <ion-icon id="backward-button" name="play-skip-back" class="text-3xl text-paragraph"></ion-icon>
+                        </div>
+                        <div id="play-and-stop-button" class="text-3xl text-paragraph">
+                            <ion-icon id="play-button" name="play" class=""></ion-icon>
+                            <ion-icon id="pause-button" name="pause" class="hidden"></ion-icon>
+                        </div>
+                        <div>
+                            <ion-icon id="foward-button" name="play-skip-forward" class="text-3xl text-paragraph"></ion-icon>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
-	</footer>
+    </section>
+    <footer class="px-4 mt-72 md:mt-0 lg:mt-24 md:px-16 pb-9">
+        <div class="flex justify-between">
+            <div class="flex flex-col">
+                <div class="space-x-4 text-paragraph">
+                    <a href="mailto:mzpnzakky@gmail.com" class="lg:text-xl">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                    <a href="https://instagram.com/m.niazyk" class="lg:text-xl">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://github.com/NiazTy" class="lg:text-xl">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+                <div>
+                    <p class="text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">
+                        © 2024 <a href="/">Niaz</a>
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="space-x-1 md:space-x-6">
+                    <a href="#home" class="border-b border-[#787A91] text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">Home</a> <br class="hidden">
+                    <a href="gallery" class="text-xs font-semibold opacity-50 font-ibm-plex-sans hover:opacity-100 md:text-sm text-paragraph link-hovered">Gallery</a> <br class="hidden">
+                    <a href="works" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Works</a> <br class="hidden">
+                    <a href="about-me" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">About Me</a> <br class="hidden">
+                </div>
+                <div>
+                    <p class="text-xs font-semibold text-right font-ibm-plex-sans md:text-sm text-paragraph">
+                        Last update at 30/06/2024
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="js/musicPlayer.js"></script>
