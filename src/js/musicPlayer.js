@@ -1,4 +1,4 @@
-const musicURL = "../../public/music";
+const musicURL = "../src/public/music";
 
 let musicList = [
   { title: "Blue Water", src: `${musicURL}/1.mp3` },
