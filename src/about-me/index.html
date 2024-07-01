@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me - niaz.my.id</title>
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        
+        <!-- Alpinejs -->
+        <script src="//unpkg.com/alpinejs" defer></script>
+    
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="../css/style.css"> -->
+         
+        <!-- Tailwindcss -->
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../../dist/css/output.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="px-4 lg:px-16 py-9">
+            <div x-data="{ open: false }" class="container mx-auto">
+                <div class="z-10 flex items-center justify-between">
+                    <div class="font-bold font-ibm-plex-sans text-paragraph">
+                        <a href="/">PLACE FOR NIAZ</a> <br>
+                        <p class="font-semibold">HIGH SCHOOL STUDENT</p>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="gallery" class="ml-4 space-x-4 text-2xl font-semibold text-paragraph font-ibm-plex-sans">
+                            <span>Gallery</span>
+                        </a>
+                        <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                            <span>Works</span>
+                        </a>
+                        <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                            <span>About Me</span>
+                        </a>
+                    </div>
+                    <button @click="open = !open" class="w-10 h-10 rounded-md bg-paragraph md:hidden">
+                        <img src="../public/asset/hamburger.svg" alt="hamburger-menu">
+                    </button>
+                </div>
+                <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-xl">
+                    <div class="flex flex-col space-y-4">
+                        <a href="/gallery" class="ml-4 space-x-4 text-lg text-paragraph">
+                            <ion-icon name="images-outline"></ion-icon>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                            <ion-icon name="book-outline"></ion-icon>
+                            <span>Works</span>
+                        </a>
+                        <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <span>About Me</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="z-10 ">
+
+        </section>
+</body>
+</html>
