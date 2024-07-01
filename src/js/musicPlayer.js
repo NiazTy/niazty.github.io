@@ -1,9 +1,9 @@
-const musicURL = "../src/public/music";
+const musicURL = "../public/music";
 
 let musicList = [
-  { title: "Blue Water", src: `${musicURL}/1.mp3` },
-  { title: "Hurtful & Painful", src: `${musicURL}/2.mp3` },
-  { title: "La Vaguelette", src: `${musicURL}/3.mp3` }
+  { title: "Blue Water", artist: "Miura Takuya", src: `${musicURL}/1.mp3` },
+  { title: "Hurtful & Painful", artist: "Togenashi Togeari", src: `${musicURL}/2.mp3` },
+  { title: "La Vaguelette", artist: "HOYOMIX", src: `${musicURL}/3.mp3` }
 ];
 
 let currentMusicIndex = 0;
@@ -13,6 +13,7 @@ audio.volume = 0.5;
 const init = () => {
   updateAudioSource(currentMusicIndex);
   updateSongTitle(currentMusicIndex);
+  updateArtist(currentMusicIndex);
   addEventListeners();
 };
 
@@ -23,6 +24,11 @@ const updateAudioSource = (index) => {
 const updateSongTitle = (index) => {
   const songTitleElement = document.getElementById("song-title");
   songTitleElement.textContent = musicList[index].title;
+};
+
+const updateArtist = (index) => {
+  const artistElement = document.getElementById("artist");
+  artistElement.textContent = musicList[index].artist;
 };
 
 const togglePlayPause = () => {
@@ -46,6 +52,7 @@ const previousSong = () => {
   audio.pause();
   togglePlayPauseButton();
   updateSongTitle(currentMusicIndex);
+  updateArtist(currentMusicIndex);
 };
 
 const nextSong = () => {
@@ -54,6 +61,7 @@ const nextSong = () => {
   audio.pause();
   togglePlayPauseButton();
   updateSongTitle(currentMusicIndex);
+  updateArtist(currentMusicIndex);
 };
 
 const togglePlayPauseButton = () => {
