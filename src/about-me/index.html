@@ -21,48 +21,123 @@
     </head>
     <body>
         <!-- Navigation -->
-        <nav class="px-4 lg:px-16 py-9">
-            <div x-data="{ open: false }" class="container mx-auto">
-                <div class="z-10 flex items-center justify-between">
-                    <div class="font-bold font-ibm-plex-sans text-paragraph">
-                        <a href="/">PLACE FOR NIAZ</a> <br>
-                        <p class="font-semibold">HIGH SCHOOL STUDENT</p>
-                    </div>
-                    <div class="hidden md:block">
-                        <a href="gallery" class="ml-4 space-x-4 text-2xl font-semibold text-paragraph font-ibm-plex-sans">
-                            <span>Gallery</span>
-                        </a>
-                        <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
-                            <span>Works</span>
-                        </a>
-                        <a href="" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
-                            <span>About Me</span>
-                        </a>
-                    </div>
-                    <button @click="open = !open" class="w-10 h-10 rounded-md bg-paragraph md:hidden">
-                        <img src="../public/asset/hamburger.svg" alt="hamburger-menu">
-                    </button>
+    <nav class="fixed w-full z-[1000] px-4 overflow-hidden bg-white lg:px-16 py-9">
+        <div x-data="{ open: false }" class="container mx-auto">
+            <div class="z-10 flex items-center justify-between">
+                <div class="font-bold font-ibm-plex-sans text-paragraph">
+                    <a href="/">PLACE FOR NIAZ</a> <br>
+                    <p class="font-semibold">HIGH SCHOOL STUDENT</p>
                 </div>
-                <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-xl">
-                    <div class="flex flex-col space-y-4">
-                        <a href="/gallery" class="ml-4 space-x-4 text-lg text-paragraph">
-                            <ion-icon name="images-outline"></ion-icon>
-                            <span>Gallery</span>
+                <div class="hidden md:block">
+                    <a href="gallery" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 link-hovered text-paragraph font-ibm-plex-sans">
+                        <span>Gallery</span>
+                    </a>
+                    <a href="works" class="ml-4 space-x-4 text-2xl font-semibold opacity-50 hover:opacity-100 text-paragraph font-ibm-plex-sans link-hovered">
+                        <span>Works</span>
+                    </a>
+                    <a href="about-me" class="ml-4 space-x-4 text-2xl font-semibold text-paragraph font-ibm-plex-sans">
+                        <span>About Me</span>
+                    </a>
+                </div>
+                <button @click="open = !open" class="w-10 h-10 rounded-md bg-paragraph md:hidden">
+                    <img src="../public/asset/hamburger.svg" alt="hamburger-menu">
+                </button>
+            </div>
+            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed left-0 right-0 z-[1000] bg-white p-4 my-8 shadow-xl">
+                <div class="flex flex-col space-y-4">
+                    <a href="gallery" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="images-outline"></ion-icon>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>Works</span>
+                    </a>
+                    <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <span>About Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="z-10 pt-52">
+        <div class="flex px-8 lg:px-0 md:justify-around">
+            <div class="flex flex-col">
+                <h1 class="text-6xl font-libre-baskerville text-paragraph">About me</h1>
+                <p class="text-2xl font-libre-baskerville text-paragraph">Muhammad Zakky Pusponegoro</p>
+                <div class="w-1/2 mt-4 border-2 border-paragraph rounded-2xl"></div>
+            </div>
+            <div></div>
+        </div>
+    </section>
+    <section class="mt-16 bg-paragraph">
+        <div class="wave-container"></div>
+        <div class="flex flex-col items-center w-full gap-12 px-6 py-16 md:px-24 lg:gap-0 lg:flex-row md:justify-between md:space-x-11">
+            <div class="basis-1/2">
+                <p class="text-lg font-libre-baskerville text-background">Halo, saya Muhammad Zakky Pusponegoro seorang pelajar SMA yang sangat antusias dengan perkembangan teknologi ini. Saat ini saya lebih senang untuk bagaimana cara saya menikmati hidup!</p>
+            </div>
+            <div class="flex flex-col gap-4 basis-1/2">
+                <h2 class="text-5xl font-extrabold text-center lg:text-right lg:text-4xl font-libre-baskerville text-background">Muhammad Zakky Pusponegoro</h2>
+            </div>
+        </div>
+        <div class="hidden w-full md:block bg-background h-52"></div>
+        <div class="px-5 py-8 md:px-48">
+            <div class="tracking-wide space-y-7">
+                <p class="text-lg text-justify font-libre-baskerville text-background">Bersekolah di SMAN 1 Mejayan membuat saya sadar bahwa kehidupan SMA tidak seindah film. Alih-alih mendapatkan kisah cinta maupun petualangan, ternyata hanyalah kisah filler pengisi episode orang lain. Meskipun begitu untungnya saya di sekolah lumayan berprestasi.</p>
+                <p class="text-lg text-justify font-libre-baskerville text-background">Cukup dengan latar belakang saya. Dalam menjalani kehidupan saya selalu menggunakan motto "Dunia ini adalah panggung sandiwara, jadi nikmati setiap momen yang ada dan tertawalah meskipun itu hal kecil sekalipun!" yang dimana maksud sederhananya adalah nikmati hidup meskipun kalian terpuruk. Waw sangat filosofis sekali ya.</p>
+                <p class="text-lg text-justify font-libre-baskerville text-background">Selama ini saya sering melakukan hal yang tidak produktif, namun semenjak kenal dengan dunia komputer dan logika hidup saya dipenuhi dengan keputus asaan. Karena kita harus sering bermain dengan logika dan hal itu sangat menguras tenaga dan pikiran bahkan membuat saya berpikir apakah hal ini merupakan hal yang saya senangi?</p>
+                <p class="text-lg text-justify font-libre-baskerville text-background">Saya suka dengerin lagu Danilla, Payung Teduh, dan Banda Neira. Memang banyak yang sudah bubar, tapi tidak penting karena yang lebih penting lagunya enak-enak. Saya suka nonton film atau series, sesekali juga suka baca buku, tapi itu kalo udah capek main game.</p>
+            </div>
+        </div>
+    </section>
+    <section class="py-24">
+        <div class="w-full h-screen">
+            <div class="flex flex-col items-center gap-12 md:pl-12 md:gap-0 md:flex-row md:justify-around">
+                <h3 class="text-6xl text-center font-libre-baskerville text-paragraph">Apa Yang Kulakukan?</h3>
+                <div class="w-1/2 border-4"></div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="px-4 md:px-16 pb-9">
+        <div>
+            <div class="flex justify-between">
+                <div class="flex flex-col">
+                    <div class="space-x-4 text-paragraph">
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="mail-outline"></ion-icon>
                         </a>
-                        <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
-                            <ion-icon name="book-outline"></ion-icon>
-                            <span>Works</span>
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="logo-instagram"></ion-icon>
                         </a>
-                        <a href="" class="ml-4 space-x-4 text-lg text-paragraph">
-                            <ion-icon name="person-outline"></ion-icon>
-                            <span>About Me</span>
+                        <a href="" class="lg:text-xl">
+                            <ion-icon name="logo-github"></ion-icon>
                         </a>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">
+                            © 2024 <a href="/">Niaz</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="space-x-1 md:space-x-6">
+                        <a href="/" class="text-xs font-semibold opacity-50 font-ibm-plex-sans md:text-sm hover:opacity-100 link-hovered text-paragraph">Home</a> <br class="hidden">
+                        <a href="gallery" class="border-b border-[#787A91] text-xs font-semibold font-ibm-plex-sans md:text-sm text-paragraph">Gallery</a> <br class="hidden">
+                        <a href="works" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">Works</a> <br class="hidden">
+                        <a href="about-me" class="text-xs font-semibold opacity-50 hover:opacity-100 font-ibm-plex-sans md:text-sm link-hovered text-paragraph">About Me</a> <br class="hidden">
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold text-right font-ibm-plex-sans md:text-sm text-paragraph">
+                            Last update at 03/07/2024
+                        </p>
                     </div>
                 </div>
             </div>
-        </nav>
-        <section class="z-10 ">
+        </div>
+	</footer>
 
-        </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>
